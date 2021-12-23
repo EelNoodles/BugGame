@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css"></link>
+  <link rel="stylesheet" href="animation.css"></link>
+  <title>有一隻蟲</title>
+</head>
+<body>
+  <audio id="bkmusic_stage2" src="Material/8-Bit.mp3" preload="auto" loop></audio>
+  <audio id="bkmusic_stage2_street" src="Material/morning_streets.mp3" preload="auto" loop></audio>
+  <audio id="bkmusic_stage3" src="Material/Monplaisir.mp3" preload="auto" loop></audio>
+  <audio id="bkmusic_stage3_rain" src="Material/hearing_rain.mp3" preload="auto" loop></audio>
+  <audio id="bkmusic_stage4" src="Material/Jeremy.mp3" preload="auto" loop></audio>
+  <audio id="soundef_useless" src="Material/blip03.mp3" preload="auto"></audio>
+  <audio id="soundef_useful" src="Material/coin01.mp3" preload="auto"></audio>
+  <audio id="soundef_scream" src="Material/scream.mp3" preload="auto"></audio>
+  <audio id="soundef_button" src="Material/button04b.mp3" preload="auto"></audio>
+  <audio id="soundef_jump" src="Material/jump01.mp3" preload="auto"></audio>
+  <audio id="soundef_damage" src="Material/damage1.mp3" preload="auto"></audio>
+  <audio id="soundef_boxopen" src="Material/wooden_drawer_O.mp3" preload="auto"></audio>
+  <audio id="soundef_flopen" src="Material/mobile_phone_O.mp3" preload="auto"></audio>
+  <audio id="soundef_flclose" src="Material/mobile_phone_C.mp3" preload="auto"></audio>
+  <audio id="soundef_print" src="Material/printer.mp3" preload="auto"></audio>
+  <audio id="soundef_irondoor" src="Material/iron_door2_O.mp3" preload="auto"></audio>
+  <audio id="soundef_closelight" src="Material/closelight..mp3" preload="auto"></audio>
+  <audio id="soundef_put" src="Material/put.mp3" preload="auto"></audio>
+  <audio id="music_forget" src="Material/forget.mp3" preload="auto" loop></audio>
+  <audio id="music_threenight" src="Material/three_night.mp3" preload="auto" loop></audio>
+  <audio id="music_magnifier" src="Material/magnifier.mp3" preload="auto" loop></audio>
+  <audio id="soundef_scissors" src="Material/scissors1.mp3" preload="auto"></audio>
+  <audio id="soundef_bomb" src="Material/bomb.mp3" preload="auto"></audio>
+  <div id="game_info" style="z-index: 4; font-size: 25px; background-color: #00000060;"></div>
+  <div id="BUG" style="position: absolute; width: 80px; height: 80px; background: url(Material/bug.gif) no-repeat; background-size: contain;"></div>
+  <div id="plot" style="display: none; width: 100%; height: 100%; background: black; opacity: 80%; position: absolute; z-index: 3;"></div>
+  <div id="main_login" class="mainArea">
+      <div id="mainAreaLogo" class="login_logo_area" style="top: 0; position: absolute;">
+        <div class="logoFormat" style="left: 25%">有</div>
+        <div class="logoFormat"  style="left: 39%;">一</div>
+        <div class="logoFormat" style="left: 52%;">隻</div>
+        <div class="logoFormat" style="left: 66%;">蟲</div>
+      </div>
+        <input id="eb_number" placeholder="請輸入學號"></input>
+        <input id="eb_name" placeholder="請輸入名稱"></input>
+        <input id="login" type="button" value="登入" ></input>
+    </div>
+    <div id="main_startgame" class="mainArea" style="visibility: hidden;">
+      <div class="login_logo_area" id="stage_two_logo">
+        <div class="logoFormat stage2" id="login_there" style="left: 25%">有</div>
+        <div class="logoFormat stage2" id="login_is" style="left: 39%;">一</div>
+        <div class="logoFormat stage2" id="login_a" style="left: 52%;">隻</div>
+        <div class="logoFormat stage2" id="login_bug" style="left: 66%;">蟲</div>
+      </div>
+      <div id="login_click_area">
+        <div class="clickFormat stage2" id="login_click" style="left: 43.5%;">點</div>
+        <div class="clickFormat stage2" id="login_knock" style="left: 51.5%;">敲</div>
+      </div>
+      <div id="start_game_area">開 始 遊 戲</div>
+    </div>
+    <div id="stage_two" style="display: none;">
+        <div id="factory" class="con_stage2"></div>
+        <div id="home" class="con_stage2"></div>
+        <div id="neighborA" class="con_stage2"></div>
+        <div id="neighborB" class="con_stage2"></div>
+        <div id="dialogboxA" style="color: azure; font-size: 30px;"></div>
+        <div id="dialogboxB" style="color: azure; font-size: 30px;"></div>
+        <div id="dialogboxC" style="color: azure; font-size: 30px; z-index: -1;"></div>
+        <div id="Sky" class="con_stage2"></div>
+        <div id="night" style="color: rgb(255, 255, 255); font-size: 30px; display: none;">夜</div>
+        <div id="user_info" class="con_stage2 user_infoFormat"></div>
+        <div id="hint_button" class="con_stage2"></div>
+        <div id="identification_card" style="display: none;"><div id="user_info_in_card" class="user_infoFormat" style="top: 47%; left: 30%; font-size: 1px;"></div></div>
+        <div id="home_key" style="display: none;"></div>
+    </div>
+    <div id="stage_three" style="display: none;">
+      <div id="anvil_hint" class="con_stage3"></div>
+      <div id="obj_anvil_hint" style="display: none;"></div>
+      <div id="jiugongge_one" style="display: none;"></div>
+      <div id="host" class="con_stage3"></div>
+      <div id="screen" style="display: none;">
+        <div id="screen_close_button" style="display: none;"></div>
+        <div id="text_password" style="color: azure; font-size: 40px; font-family: 'PixelMplus', serif; display: none; width: 100%; text-align: center; top: 10%; position: absolute;">請輸入密碼</div>
+        <input id="screen_password" style="display: none;" placeholder="請輸入密碼"></input>
+        <input id="screen_submit" type="button" style="display: none;" value="送出" onclick="SumbitPassword()"></input>
+      </div>
+      <div id="mural"></div>
+      <div id="safe_box" class="con_stage3"></div>
+      <div id="book" class="con_stage3"></div>
+      <div id="box" class="con_stage3"></div>
+      <div id="dog" class="con_stage3"></div>
+      <div id="jiugongge_three" style="display: none;"></div>
+      <div id="girl" class="con_stage3"></div>
+      <div id="donut" style="display: none;"></div>
+      <div id="penties" style="display: none;"></div>
+      <div id="bar" style="display: none;"></div>
+      <div id="eraser" style="display: none;"></div>
+      <div id="safe_key" style="display: none;"></div>
+      <div id="flashlight" style="display: none;"></div>
+      <div id="flashlight_light" style="display: none;"></div>
+      <div id="fh_password" style="display: none;"></div>
+      <div id="school" class="con_stage3">NUTN</div>
+      <div id="school_halo" style="display: none;" class="con_stage3"></div>
+      <div id="book_hint" style="display: none;"></div>
+      <div id="jiugongge_four" style="display: none;"></div>
+      <div id="dialogGT"></div>
+      <div id="dialogDOG" style="color: azure;"></div>
+  </div>
+  <div id="stage_four" style="display: none;">
+    <div id = "wall" class="con_stage4" style="z-index: 0;"></div>
+    <div id = "fire" class="con_stage4" style="z-index: 1;"></div>
+    <div id = "music" class="con_stage4" onclick="MusicFolderOpen()"></div>
+    <div id = "music_folder" style="z-index: 2; display: none; position: absolute; top: 10%; left: 20%; width: 30%; height: 50%; background: url(Material/floder.png) no-repeat; background-size: contain;">
+      <div style="position: absolute; width: 10%; height: 5%; top: 2.5%; left: 70%;" onclick="MusicFolderOpen()"></div>
+      <div style="position: absolute; width: 20%; height: 25%; top: 13%; left: 37%;" onclick="MusicPlay('music_forget')"></div>
+      <div style="position: absolute; width: 20%; height: 25%; top: 47%; left: 5%;" onclick="MusicPlay('music_threenight')"></div>
+      <div style="position: absolute; width: 20%; height: 25%; top: 47%; left: 37%;" onclick="MusicPlay('music_magnifier')"></div>
+    </div>
+    <div id="loadbar" style="z-index: 2; position: absolute; width: 30%; height: 5%; top: 50%; left: 50%; transform: translate(-50%, -50%); display: none; transform-origin: center center;">
+      <div style="position: absolute; width: 5%; height: 50%; top: 50%; left: 10%; transform: translate(-50%, -50%); background: url(Material/stop.png) no-repeat; background-size: contain;" onclick="StopFolderMusic()"></div>
+      <div style="position: absolute; width: 50%; height: 30%; top: 50%; left: 27%; transform: translate(0%, -50%); background-color: white; border: 1px black solid;"></div>
+      <div id="loadbar_water" style="position: absolute; width: 0%; height: 30%; top: 50%; left: 27%; transform: translate(0%, -50%); background-color: aqua; transform-origin: inherit"></div>
+    </div>
+    <div id = "zip" class="con_stage4" style="z-index: -1;"></div>
+    <div id = "word_sbug1" class="s_bug" style="display: none;">虫</div>
+    <div id = "word_sbug2" class="s_bug" style="display: none;">虫</div>
+    <div id = "word_sbug3" class="s_bug" style="display: none;">虫</div>
+    <div id = "scissors" class="con_stage4"></div>
+    <div id = "sticker" style="display: none;"></div>
+    <div id = "garbage" class="con_stage4"></div>
+    <div id = "converter" class="con_stage4" style="z-index: -1;"></div>
+    <div id = "word_water" style="display: none;">水</div>
+    <div id = "word_magnifier" style="display: none;">放大鏡</div>
+    <div class="logoFormat" id="end_bug" style="position: absolute; top: 10%; left: 45%; font-family: 'PixelMplus', serif;">蟲</div>
+    <div id = "water" class="con_stage4" style="display: none; z-index: -1;"></div>
+    <div id = "magnifier" style="display: none;"></div>
+  </div>
+  <div id="end_info" style="display: none;"></div>
+  <div id="end_title" style="display: none;">恭喜通關</div>
+</body>
+<script src="login.js"></script>
+<script src="drag_drop.js"></script>
+<script src="stage2.js"></script>
+<script src="stage3.js"></script>
+<script src="stage4.js"></script>
+</html>

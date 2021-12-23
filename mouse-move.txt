@@ -1,0 +1,23 @@
+function moveToCurrentLoc(Source){
+    Source.style.top = posy + "px";
+    Source.style.left = posx + "px";
+}
+
+document.onmousemove = getCursorPosition;
+
+var posx = 0;
+var posy = 0;
+function getCursorPosition(e)
+{
+    if (!e) var e = window.event;
+    if (e.pageX || e.pageY)     {
+        posx = e.pageX- document.documentElement.scrollLeft- document.body.scrollLeft;
+        posy = e.pageY- document.documentElement.scrollTop- document.body.scrollTop;
+    }
+    else if (e.clientX || e.clientY){
+        posx = e.clientX ;
+        posy = e.clientY ;
+    }
+    console.log(posy + "px", posx + "px")
+    return [posx,posy];
+}

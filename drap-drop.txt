@@ -1,0 +1,55 @@
+    nameEb.setAttribute("draggable", true);
+    numberEb.setAttribute("draggable", true);
+    startArea.setAttribute("data-role", "drag-drop-container");
+
+
+    let dragSources = document.querySelectorAll('[draggable="true"]')
+    dragSources.forEach(dragSource => {
+    dragSource.addEventListener('dragstart', dragStart)
+    dragSource.addEventListener('dragend', dragEnd)
+    });
+
+    let dropTargets = document.querySelectorAll('[data-role="drag-drop-container"]')
+    dropTargets.forEach(dropTarget => {
+    dropTarget.addEventListener('drop', drop)
+    dropTarget.addEventListener('dragenter', cancelDefault)
+    dropTarget.addEventListener('dragover', dropOver)
+    dropTarget.addEventListener('dragleave', dropLeave)
+    })
+}
+
+function dragStart (e) {
+    e.dataTransfer.setData('text/plain', e.target.id)
+    this.classList.add('dragging');
+  }
+
+function dragEnd (e) {
+    this.classList.remove('dragging');
+    cancelDefault(e);
+  }
+
+function dropOver (e) {
+    this.classList.add('draghover');
+    cancelDefault(e);
+  }
+
+function dropLeave(e) {
+    this.classList.remove('draghover');
+    cancelDefault(e);
+  }
+
+function drop(e) {
+    cancelDefault(e);
+    let id = e.dataTransfer.getData('text/plain');
+    this.classList.remove('draghover');
+
+    if(id == "eb_name" || id == "eb_number"){
+        startGameStage();
+        document.getElementById(id).style.display = "none";
+    }
+
+function cancelDefault (e) {
+    e.preventDefault()
+    e.stopPropagation()
+    return false
+  }

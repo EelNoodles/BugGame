@@ -1,0 +1,389 @@
+#BUG{
+    animation-name: bug_move;
+    animation-duration: 60s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bug_move{
+    0%{
+        top: 85%;
+        left: 10%;
+        transform: rotate(90deg)
+    }
+    40%{
+        top: 85%;
+        left: 90%;
+        transform: rotate(90deg)
+    }
+    50%{
+        top: 85%;
+        left: 90%;
+        transform: rotate(270deg)
+    }
+    90%{
+        top: 85%;
+        left: 10%;
+        transform: rotate(270deg)
+    }
+    100%{
+        top: 85%;
+        left: 10%;
+        transform: rotate(90deg)
+    }
+}
+
+.screentransform_show{
+    animation-name: show;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+@keyframes show{
+    0%{
+        top: 58.5%;
+        left: 66%;
+        width: 7.5%;
+        height: 8.5%;
+    }
+    50%{
+        top: 45%;
+        left: 65.7%;
+        width: 9%;
+        height: 12%;
+    }
+    100%{
+        top: 18%;
+        left: 45.7%;
+        width: 30%;
+        height: 35%;
+    }
+}
+
+.screentransform_close{
+    animation-name: close;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+@keyframes close{
+    0%{
+        top: 18%;
+        left: 45.7%;
+        width: 30%;
+        height: 35%;
+    }
+    50%{
+        top: 45%;
+        left: 65.7%;
+        width: 9%;
+        height: 12%;
+    }
+    100%{
+        top: 58.5%;
+        left: 66%;
+        width: 7.5%;
+        height: 8.5%;
+    }
+}
+
+.night_move{
+    animation-name: nightMove;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+
+@keyframes nightMove{
+    0%{
+        top: 50%;
+        left: 88.9%;
+        width: 2%;
+        height: 4%;
+    }
+    50%{
+        top: 49%;
+        left: 88.9%;
+        width: 2%;
+        height: 4%;
+    }
+    100%{
+        top: 50%;
+        left: 88.9%;
+        width: 2%;
+        height: 4%;
+    }
+}
+.itemBoom_safe_key{
+    animation-name: itemBoom_safe_key;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+@keyframes itemBoom_safe_key{
+    0%{
+        top: 80.5%;
+        left: 9.3%;
+    }
+    50%{
+        top: 60%;
+        left: 25%;
+    }
+    100%{
+        top: 83%;
+        left: 32%;
+    }
+}
+
+.itemBoom_eraser{
+    animation-name: itemBoom_eraser;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+@keyframes itemBoom_eraser{
+    0%{
+        top: 80.5%;
+        left: 9.3%;
+    }
+    50%{
+        top: 55%;
+        left: 40%;
+    }
+    100%{
+        top: 83%;
+        left: 47%;
+    }
+}
+
+.itemBoom_flashlight{
+    animation-name: itemBoom_flashlight;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+@keyframes itemBoom_flashlight{
+    0%{
+        top: 80.5%;
+        left: 9.3%;
+    }
+    50%{
+        top: 75%;
+        left: 20%;
+    }
+    100%{
+        top: 83%;
+        left: 27%;
+    }
+}
+
+.itemBoom_donut{
+    animation-name: itemBoom_donut;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+@keyframes itemBoom_donut{
+    0%{
+        top: 80.5%;
+        left: 9.3%;
+    }
+    50%{
+        top: 40%;
+        left: 30%;
+    }
+    100%{
+        top: 83%;
+        left: 37%;
+    }
+}
+
+.fhPassword_Show{
+    animation-name: fhPassword_Show;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+@keyframes fhPassword_Show{
+    0%{
+        top: 49%;
+        left: 25%;
+        width: 10.2%;
+        height: 5.5%;
+        background: #ffffff60;
+    }
+    50%{
+        top: 10%;
+        left: 50%;
+        width: 20%;
+        height: 10%;
+    }
+    100%{
+        top: 5%;
+        left: 50%;
+        width: 30%;
+        height: 20%;
+        background: #ffffff80;
+    }
+}
+
+.fhPassword_Close{
+    animation-name: fhPassword_Close;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+@keyframes fhPassword_Close{
+    0%{
+        top: 5%;
+        left: 50%;
+        width: 30%;
+        height: 20%;
+        background: #ffffff80;
+    }
+    50%{
+        top: 10%;
+        left: 50%;
+        width: 20%;
+        height: 10%;
+    }
+    100%{
+        top: 49%;
+        left: 25%;
+        width: 10.2%;
+        height: 5.5%;
+        background: #ffffff60;
+    }
+}
+
+.bookHint_Open{
+    animation-name: bookHint_Open;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+@keyframes bookHint_Open{
+    0%{
+        top: 62.5%;
+        left: 8%;
+        width: 7.5%;
+        height: 7%;
+    }
+    50%{
+        top: 20%;
+        left: 12%;
+        width: 7.5%;
+        height: 7%;
+    }
+    100%{
+        top: 60%;
+        left: 12%;
+        width: 28%;
+        height: 35%;
+    }
+}
+
+.bookHint_Close{
+    animation-name: bookHint_Close;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+@keyframes bookHint_Close{
+    0%{
+        top: 60%;
+        left: 12%;
+        width: 28%;
+        height: 35%;
+    }
+    50%{
+        top: 20%;
+        left: 12%;
+        width: 7.5%;
+        height: 7%;
+    }
+    100%{
+        top: 62.5%;
+        left: 8%;
+        width: 7.5%;
+        height: 7%;
+    }
+}
+
+.backgroundToStage3{
+    animation-name: backgroundToStage3;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+@keyframes backgroundToStage3{
+    0%{
+        top: 18%;
+        left: 45.7%;
+        width: 30%;
+        height: 35%;
+    }
+    100%{
+        top: 50%;
+        left: 50%;
+        width: 70%;
+        height: 70%;
+        transform: translate(-40%, -50%);
+    }
+}
+
+.backgroundToStage2{
+    animation-name: backgroundToStage2;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+@keyframes backgroundToStage2{
+    0%{
+        background-position: 0px -151px;
+    }
+    100%{
+        background-position: -1920px -151px;
+    }
+}
+
+.backgroundShake{
+    animation-name: backgroundShake;
+    animation-duration: 0.2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes backgroundShake{
+    0%{
+        background-position: 2px -146px;
+    }
+    25%{
+        background-position: 0px -151px;
+    }
+    50%{
+        background-position: -2px -156px;
+    }
+    100%{
+        background-position: 0px -151px;
+    }
+    
+}
+
